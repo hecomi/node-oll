@@ -1,34 +1,15 @@
-var addon = require('./build/Release/oll');
-var OLL  = new addon.P();
+var oll = require('./build/Release/oll');
+var PA1  = new oll.PA1();
 
-function toData(x, y) {
-	return "0:" + x + " 1:" + y;
-}
+// 学習とテスト
+PA1.add('+1 0:1.0  1:2.0 2:-1.0');
+PA1.add('-1 0:-0.5 1:1.0 2:-0.5');
+console.log(PA1.test('0:1.0 1:1.0')); // 0.1714285910129547
 
-function inequality(x, y) {
-	return y < x*x;
-}
+// 学習結果をファイルへ保存
+PA1.save('test.dat');
 
-for (var i = 0; i < 1000; ++i) {
-	var x = Math.random() * 10;
-	var y = Math.random() * 100;
-	OLL.add(inequality(x, y), toData(x, y));
-}
-
-var success = 0, fault = 0;
-for (var i = 0; i < 1000; ++i) {
-	var x = Math.random() * 10;
-	var y = Math.random() * 100;
-	if (OLL.test(toData(x, y)) > 0 == inequality(x, y))
-		++success;
-	else
-		++fault;
-	console.log("x: " + x + "; y: " + y);
-	console.log(inequality(x, y));
-	console.log(OLL.test(toData(x, y)));
-}
-
-console.log(success);
-console.log(fault);
-console.log( success/(success + fault) * 100 + "%" );
+var PA1_2 = new oll.PA1();
+PA1_2.load('test.dat');
+console.log(PA1_2.test('0:1.0 1:1.0')); // 0.1714285910129547
 
