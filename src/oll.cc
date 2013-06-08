@@ -1,6 +1,6 @@
 #include <memory>
 #include <node.h>
-#include "oll_class.hpp"
+#include "oll.hpp"
 #include "v8.hpp"
 
 using namespace v8;
@@ -124,15 +124,6 @@ void init(Handle<Object> target) {
 	set<oll_tool::PAK_s> ( target, "PAK" );
 	set<oll_tool::CW_s>  ( target, "CW"  );
 	set<oll_tool::AL_s>  ( target, "AL"  );
-	// hecomi::V8::ExportToJS<OllJs<oll_tool::CW_s>> train_method("CW");
-	// train_method.add_func<bool>("save");
-	// train_method.add_func<bool>("load");
-	// train_method.add_func<bool>("add");
-	// train_method.add_func<double>("test");
-	// target->Set(
-	// 	String::NewSymbol("CW"),
-	// 	train_method.get_class()->GetFunction()
-	// );
 }
 
 NODE_MODULE(oll, init)

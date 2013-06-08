@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <boost/optional.hpp>
-#include "oll.hpp"
+#include <oll.hpp>
 
 /**
  *  オンライン学習ライブラリの機能をまとめたクラス

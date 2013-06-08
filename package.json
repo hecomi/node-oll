@@ -1,0 +1,25 @@
+{
+  "name": "oll",
+  "version": "0.0.1",
+  "author": {
+    "name": "hecomi",
+    "email": "info@hecomi.com"
+  },
+  "main": "oll.js",
+  "dependencies": {},
+  "readmeFilename": "README.md",
+  "description": "Online learning library using oll",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hecomi/node-oll.git"
+  },
+  "bugs": {
+    "mail": "info@hecomi.com",
+    "url": "http://github.com/hecomi/node-oll/issues"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "test": "node test/test"
+  },
+  "gypfile": true
+}
