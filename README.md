@@ -49,7 +49,7 @@ C は oll_train の -C パラメータに相当し、デフォルトで 1.0、bi
 次のように学習とテスト、及び学習結果の保存と読み込みをすることができます。
 
 ```javascript
-var oll = require('./build/Release/oll');
+var oll = require('oll');
 var PA1  = new oll.PA1();
 
 // 学習とテスト
